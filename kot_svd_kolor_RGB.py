@@ -4,12 +4,12 @@ import matplotlib.pyplot as plt
 
 
 def rysuj_macierz(ax, macierz, tytul, vmin, vmax):
-    #zmiana cmap
     ax.imshow(macierz, interpolation='nearest', vmin=vmin, vmax=vmax)
     ax.set_title(tytul)
     ax.axis('off')
 
 def stworz_Ai(U, S, Vt, i):
+    # jeśli macierz nie je
     if i >= len(U):
         Ai = np.zeros_like(U)
         return Ai

@@ -53,24 +53,20 @@ def main():
     # Stworzenie macierzy diagonalnej S
     S = np.diag(s)
 
-    A1 = stworz_Ai(U, S, Vt, 1)
-    A2 = stworz_Ai(U, S, Vt, 2)
-    A3 = stworz_Ai(U, S, Vt, 3)
-    A4 = stworz_Ai(U, S, Vt, 4)
-    A5 = stworz_Ai(U, S, Vt, 5)
-    A6 = stworz_Ai(U, S, Vt, 6)
-    A7 = stworz_Ai(U, S, Vt, 7)
-    A8 = stworz_Ai(U, S, Vt, 8)
-    A9 = stworz_Ai(U, S, Vt, 9)
-    lista_macierzy = [A1, A2, A3, A4, A5, A6, A7, A8, A9]
-    max = stworz_skale(lista_macierzy)
+    A1 = stworz_Ai(U, S, Vt, 0)
+    A2 = stworz_Ai(U, S, Vt, 1)
+    A3 = stworz_Ai(U, S, Vt, 2)
+    A4 = stworz_Ai(U, S, Vt, 3)
+    A5 = stworz_Ai(U, S, Vt, 4)
+    A6 = stworz_Ai(U, S, Vt, 5)
+    A7 = stworz_Ai(U, S, Vt, 6)
+    A8 = stworz_Ai(U, S, Vt, 7)
+    A9 = stworz_Ai(U, S, Vt, 8)
+    A10 = stworz_Ai(U, S, Vt, 9)
 
-    A11 = np.array(A1)
-    A22 = np.array(A2)
-    A33 = np.array(A3)
-    A44 = np.array(A4)
-    A55 = np.array(A5)
-    B = A11 + A22 + A33 + A44 + A55
+
+    lista_macierzy = [A1, A2, A3, A4, A5, A6, A7, A8, A9, A10]
+    max = stworz_skale(lista_macierzy)
 
     fig, axes = plt.subplots(3, 2, figsize=(12, 10))
 

@@ -26,7 +26,6 @@ def main():
     U, s, Vt = np.linalg.svd(A)
     # Stworzenie macierzy diagonalnej S
     S = np.diag(s)
-
     # Tworzenie rysunków na jednej figurze
     fig, axes = plt.subplots(2, 2, figsize=(10, 10))
 

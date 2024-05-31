@@ -5,11 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ed9800b6-37d9-4c9f-b46b-f96111ae412d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/algebra_projekt3.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kot_svd_kolor.py" beforeDir="false" afterPath="$PROJECT_DIR$/kot_svd_kolor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SVD.py" beforeDir="false" afterPath="$PROJECT_DIR$/SVD.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kot_svd_kolor_RGB.py" beforeDir="false" afterPath="$PROJECT_DIR$/kot_svd_kolor_RGB.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/macierze_A1_A6.png" beforeDir="false" afterPath="$PROJECT_DIR$/macierze_A1_A6.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/warstwy.py" beforeDir="false" afterPath="$PROJECT_DIR$/warstwy.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
