@@ -57,6 +57,7 @@ def main():
     rysuj_macierz(axes1[1], np.stack((z, G, z), axis=-1), f"kot G", np.min(G), np.max(G))
     rysuj_macierz(axes1[2], np.stack((z, z, B), axis=-1), f"kot B", np.min(B), np.max(B))
     plt.tight_layout()
+    plt.savefig("kotek_RGB.png")
     plt.show()
 
 

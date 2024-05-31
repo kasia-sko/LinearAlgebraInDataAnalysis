@@ -68,7 +68,7 @@ def main():
         rysuj_macierz(axes[row, col], kot_kolorowy, f"kot {lista_indeksow[i]}", np.min(kot_kolorowy), np.max(kot_kolorowy))
 
     plt.tight_layout()
-    #plt.savefig("kotek_kasi.png")
+    plt.savefig("kotek_kasi.png")
     plt.show()
 
 
