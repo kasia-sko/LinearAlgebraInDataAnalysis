@@ -35,6 +35,7 @@ def main():
     rysuj_macierz(axes[1, 1], Vt, "Macierz $V^T$", np.min(Vt), np.max(Vt))
 
     plt.tight_layout()
+    plt.savefig("wyjsciowe_macierze.png")
     plt.show()
 
 if __name__ == "__main__":

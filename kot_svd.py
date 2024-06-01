@@ -27,33 +27,27 @@ def sumuj_do_Ai(kot, i):
     for j in range(i):
         Ai = stworz_Ai(U, S, Vt, j)
         Ai= np.pad(Ai, ((0, 0), (0, kot.shape[1] - Ai.shape[1])), mode='constant')
-
         K += Ai.astype(np.float64)  # Rzutowanie Ai na float64 przed dodaniem
         K = np.clip(K, 0, 255)
     return K.astype(np.uint8)  # Rzutowanie na uint8 przed zwróceniem
 
 
 def main():
-    # Ścieżka do twojego obrazu
     image_path = 'kot.jpeg'
 
-    # Załaduj obraz
+    # Załadowanie obrazu
     image = Image.open(image_path)
 
-    # Konwertuj obraz na odcienie szarości
+    # Konwertowanie obrazu na odcienie szarości
     image_gray = image.convert('L')
-
-    # Przekonwertuj obraz na macierz numpy
     kot = np.array(image_gray)
 
     lista_indeksow = [1, 2, 4, 5, 10, 20, 50, 200, 700, 1000]
     fig, axes = plt.subplots(5, 2, figsize=(12, 8))
 
     for i in range(len(lista_indeksow)):
-        # Oblicz indeks w układzie 5x2
-        row = i // 2  # Wiersz: dzielenie całkowite przez 2
-        col = i % 2  # Kolumna: reszta z dzielenia przez 2
-
+        row = i // 2
+        col = i % 2
         # Rysowanie każdej macierzy na osobnym subplotcie
         kot_i = sumuj_do_Ai(kot, lista_indeksow[i])
         rysuj_macierz(axes[row, col], kot_i, f"kot {lista_indeksow[i]}", np.min(kot_i), np.max(kot_i))

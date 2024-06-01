@@ -35,18 +35,14 @@ def sumuj_do_Ai(kot, i):
 
 
 def main():
-    # Ścieżka do twojego obrazu
     image_path = 'prazek-min.jpg'
 
-    # Załaduj obraz
+    # Załadowanie obrazu
     image = Image.open(image_path)
-
     image = image.convert('RGB')
-
-    # Przekonwertuj obraz na numpy array
     kot = np.array(image)
 
-    # Wyodrębnij poszczególne kanały
+    # Wyodrębnienie poszczególnych kanałów
     R = kot[:, :, 0]
     G = kot[:, :, 1]
     B = kot[:, :, 2]

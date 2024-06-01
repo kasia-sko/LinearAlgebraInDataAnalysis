@@ -18,8 +18,8 @@ def stworz_Ai(U, S, Vt, i):
 
 
 def stworz_skale(lista):
-    min = 100
-    max = -100
+    min = np.inf
+    max = -np.inf
     for i in range(len(lista)):
         if np.min(lista[i]) < min:
             min = np.min(lista[i])
@@ -63,7 +63,6 @@ def main():
     A8 = stworz_Ai(U, S, Vt, 7)
     A9 = stworz_Ai(U, S, Vt, 8)
     A10 = stworz_Ai(U, S, Vt, 9)
-
 
     lista_macierzy = [A1, A2, A3, A4, A5, A6, A7, A8, A9, A10]
     max = stworz_skale(lista_macierzy)

@@ -18,8 +18,8 @@ def stworz_Ai(U, S, Vt, i):
 
 
 def stworz_skale(lista):
-    min = 100
-    max = -100
+    min = np.inf
+    max = -np.inf
     for i in range(len(lista)):
         if np.min(lista[i]) < min:
             min = np.min(lista[i])
@@ -63,11 +63,9 @@ def main():
     A8 = stworz_Ai(U, S, Vt, 7)
     A9 = stworz_Ai(U, S, Vt, 8)
     lista_macierzy = [A1, A2, A3, A4, A5, A6, A7, A8, A9]
-    max = stworz_skale(lista_macierzy)
 
     fig, axes = plt.subplots(3, 2, figsize=(12, 8))
 
-    #Rysowanie każdej macierzy na osobnym subplotcie
     rysuj_macierz(axes[0,0], A1 + A2, "Macierz A1 + A2", np.min(A1 + A2), np.max(A1 + A2))
     rysuj_macierz(axes[0,1], A1 + A2 + A3, "Macierz A1 + A2 + A3", np.min(A1 + A2 + A3), np.max(A1 + A2 + A3))
     rysuj_macierz(axes[1,0], A1 + A2 + A3 + A4, "Macierz A1 + A2 + A3 + A4", np.min(A1 + A2 + A3 + A4),

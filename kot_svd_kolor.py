@@ -4,7 +4,6 @@ import matplotlib.pyplot as plt
 
 
 def rysuj_macierz(ax, macierz, tytul, vmin, vmax):
-    #zmiana cmap
     ax.imshow(macierz, interpolation='nearest', vmin=vmin, vmax=vmax)
     ax.set_title(tytul)
     ax.axis('off')
@@ -35,18 +34,15 @@ def sumuj_do_Ai(kot, i):
 
 
 def main():
-    # Ścieżka do twojego obrazu
     image_path = 'prazek-min.jpg'
 
-    # Załaduj obraz
     image = Image.open(image_path)
 
     image = image.convert('RGB')
 
-    # Przekonwertuj obraz na numpy array
     kot = np.array(image)
 
-    # Wyodrębnij poszczególne kanały
+    # Wyodrębnienie poszczególne kanałów RBG
     R = kot[:, :, 0]
     G = kot[:, :, 1]
     B = kot[:, :, 2]
@@ -56,9 +52,8 @@ def main():
     fig, axes = plt.subplots(5, 2, figsize=(12, 8))
 
     for i in range(len(lista_indeksow)):
-        # Oblicz indeks w układzie 5x2
-        row = i // 2  # Wiersz: dzielenie całkowite przez 2
-        col = i % 2  # Kolumna: reszta z dzielenia przez 2
+        row = i // 2
+        col = i % 2
 
         # Rysowanie każdej macierzy na osobnym subplotcie
         kot_i_R = sumuj_do_Ai(R, lista_indeksow[i])
