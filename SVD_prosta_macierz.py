@@ -1,35 +1,11 @@
 import matplotlib.pyplot as plt
 import numpy as np
+import moje_funkcje as mf
 
 def rysuj_macierz(ax, macierz, tytul, min, max):
     ax.imshow(macierz, cmap='gray_r', interpolation='nearest', vmin=min, vmax=max)
     ax.set_title(tytul)
     ax.axis('off')
-
-def stworz_Ai(U, S, Vt, i):
-    if i >= len(U):
-        Ai = np.zeros_like(U)
-        return Ai
-    ui = U[:, i].reshape(-1, 1)
-    vti = Vt[i, :].reshape(1, -1)
-    s = S[i][i]
-    Ai = ui * s @ vti
-    return Ai
-
-
-def stworz_skale(lista):
-    min = np.inf
-    max = -np.inf
-    for i in range(len(lista)):
-        if np.min(lista[i]) < min:
-            min = np.min(lista[i])
-    for i in range(len(lista)):
-        if np.max(lista[i]) > max:
-            max = np.max(lista[i])
-    if abs(min) > abs(max):
-        return abs(min)
-    else:
-        return abs(max)
 
 def main():
     # Przykładowa macierz A
@@ -49,20 +25,31 @@ def main():
 
     # Przeprowadzenie rozkładu SVD
     U, s, Vt = np.linalg.svd(A)
-
     # Stworzenie macierzy diagonalnej S
     S = np.diag(s)
+    print(U, s, Vt)
+    # Tworzenie rysunków na jednej figurze
+    fig, axes = plt.subplots(2, 2, figsize=(10, 10))
 
-    A1 = stworz_Ai(U, S, Vt, 0)
-    A2 = stworz_Ai(U, S, Vt, 1)
-    A3 = stworz_Ai(U, S, Vt, 2)
-    A4 = stworz_Ai(U, S, Vt, 3)
-    A5 = stworz_Ai(U, S, Vt, 4)
-    A6 = stworz_Ai(U, S, Vt, 5)
-    A7 = stworz_Ai(U, S, Vt, 6)
-    A8 = stworz_Ai(U, S, Vt, 7)
-    A9 = stworz_Ai(U, S, Vt, 8)
-    lista_macierzy = [A1, A2, A3, A4, A5, A6, A7, A8, A9]
+    rysuj_macierz(axes[0, 0], A, "Macierz $A$", np.min(A), np.max(A))
+    rysuj_macierz(axes[0, 1], U, "Macierz $U$", np.min(U), np.max(U))
+    rysuj_macierz(axes[1, 0], S, "Macierz $\\Sigma$", np.min(S), np.max(S))
+    rysuj_macierz(axes[1, 1], Vt, "Macierz $V^T$", np.min(Vt), np.max(Vt))
+
+    plt.tight_layout()
+    plt.savefig("wyjsciowe_macierze.png")
+    plt.show()
+
+    # Zsumowane macierze
+    A1 = mf.stworz_Ai(U, S, Vt, 0)
+    A2 = mf.stworz_Ai(U, S, Vt, 1)
+    A3 = mf.stworz_Ai(U, S, Vt, 2)
+    A4 = mf.stworz_Ai(U, S, Vt, 3)
+    A5 = mf.stworz_Ai(U, S, Vt, 4)
+    A6 = mf.stworz_Ai(U, S, Vt, 5)
+    A7 = mf.stworz_Ai(U, S, Vt, 6)
+    A8 = mf.stworz_Ai(U, S, Vt, 7)
+    A9 = mf.stworz_Ai(U, S, Vt, 8)
 
     fig, axes = plt.subplots(3, 2, figsize=(12, 8))
 
@@ -81,7 +68,6 @@ def main():
     plt.tight_layout()
     plt.savefig("macierze_sumy.png")
     plt.show()
-
 
 if __name__ == "__main__":
     main()
